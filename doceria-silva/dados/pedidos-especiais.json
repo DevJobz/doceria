@@ -1,0 +1,40 @@
+{
+  "eyebrow": "Pedidos Especiais",
+  "titulo_linha1": "Encomendas para",
+  "titulo_em": "momentos especiais",
+  "descricao": "Planejando um evento, festa ou presente diferenciado? Fazemos encomendas personalizadas com todo o carinho para cada ocasião.",
+  "items": [
+    {
+      "icone": "🍬",
+      "titulo": "Centos de Docinhos",
+      "descricao": "Perfeito para festas, casamentos e eventos corporativos. Docinhos artesanais em quantidade, com qualidade garantida em cada unidade.",
+      "ativo": true
+    },
+    {
+      "icone": "🥐",
+      "titulo": "Encomenda de Pastelzinhos",
+      "descricao": "Pastelzinhos de Ninho com Nutella para eventos e festas. Crocantes, recheados e irresistíveis na dose certa.",
+      "ativo": true
+    },
+    {
+      "icone": "🍫",
+      "titulo": "Encomenda de Brownies",
+      "descricao": "Brownies artesanais de Ninho com Nutella. Fudgy, saborosos e perfeitos para presentear ou animar qualquer ocasião.",
+      "ativo": true
+    },
+    {
+      "icone": "🍗",
+      "titulo": "Encomenda de Coxinhas",
+      "descricao": "Coxinhas doces de Ninho com Nutella, a novidade que faz sucesso em qualquer evento e surpreende todos os convidados.",
+      "ativo": true
+    },
+    {
+      "icone": "🥄",
+      "titulo": "Encomenda de Doces de Colher",
+      "descricao": "Docinhos em copinhos individuais nos sabores Ninho, Brigadeiro, Churros e Oreo. Elegância e praticidade para seus convidados.",
+      "ativo": true
+    }
+  ],
+  "btn_texto": "Fazer Encomenda pelo WhatsApp",
+  "btn_nota": "Entre em contato e nos conte sobre o seu evento. Faremos uma proposta personalizada especialmente para você!"
+}

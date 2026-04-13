@@ -1,0 +1,60 @@
+{
+  "eyebrow": "Cardápio",
+  "titulo_linha1": "Escolha o seu",
+  "titulo_em": "sabor favorito",
+  "subtitulo": "Todos os docinhos são vendidos em bandeja com 4 unidades.",
+  "produtos": [
+    {
+      "id": "ninho",
+      "nome": "Ninho com Nutella",
+      "descricao": "Recheio cremoso de leite Ninho com generosa camada de Nutella, coberto em chocolate branco. Vicia na primeira mordida.",
+      "preco": "Consulte",
+      "preco_label": "Bandeja 4 un.",
+      "icone": "🥛",
+      "badge_texto": "⭐ Mais Pedido",
+      "badge_tipo": "destaque",
+      "imagem": "/assets/images/uploads/ninho-nutella.jpg",
+      "imagem_alt": "Docinho de Ninho com Nutella",
+      "ativo": true
+    },
+    {
+      "id": "oreo",
+      "nome": "Oreo",
+      "descricao": "Brigadeiro branco com biscoito Oreo triturado, enrolado em mais Oreo esfarelado. Textura irresistível, sabor inesquecível.",
+      "preco": "Consulte",
+      "preco_label": "Bandeja 4 un.",
+      "icone": "🍪",
+      "badge_texto": "",
+      "badge_tipo": "",
+      "imagem": "/assets/images/uploads/oreo.jpg",
+      "imagem_alt": "Docinho de Oreo",
+      "ativo": true
+    },
+    {
+      "id": "churros",
+      "nome": "Churros",
+      "descricao": "Recheio de doce de leite com toque de canela, coberto com açúcar e canela. O sabor da festa junina no seu docinho.",
+      "preco": "Consulte",
+      "preco_label": "Bandeja 4 un.",
+      "icone": "🍡",
+      "badge_texto": "✦ Novidade",
+      "badge_tipo": "novo",
+      "imagem": "/assets/images/uploads/churros.jpg",
+      "imagem_alt": "Docinho de Churros",
+      "ativo": true
+    },
+    {
+      "id": "brigadeiro",
+      "nome": "Brigadeiro",
+      "descricao": "O clássico que nunca sai de moda. Massa fudgy de chocolate, granulado belga e aquele brilho perfeito que faz a boca salivar.",
+      "preco": "Consulte",
+      "preco_label": "Bandeja 4 un.",
+      "icone": "🍫",
+      "badge_texto": "",
+      "badge_tipo": "",
+      "imagem": "/assets/images/uploads/brigadeiro.jpg",
+      "imagem_alt": "Brigadeiro tradicional",
+      "ativo": true
+    }
+  ]
+}

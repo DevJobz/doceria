@@ -1,0 +1,15 @@
+{
+  "eyebrow": "✦ Docinhos Artesanais ✦",
+  "titulo_linha1": "Cada mordida,",
+  "titulo_em": "um momento",
+  "titulo_linha3": "de pura felicidade.",
+  "descricao": "Criados com amor por Emily e Vitória, nossos docinhos são a experiência que você merece — artesanais, únicos e irresistíveis.",
+  "btn_primario_texto": "Ver Cardápio",
+  "btn_primario_href": "#cardapio",
+  "btn_secundario_texto": "Fazer Pedido",
+  "btn_secundario_href": "#pedido",
+  "badge_icone": "🍫",
+  "badge_texto": "Bandeja c/ 4 un.",
+  "imagem": "/assets/images/uploads/hero-plate.png",
+  "imagem_alt": "Bandeja de docinhos artesanais Doceria Silva"
+}

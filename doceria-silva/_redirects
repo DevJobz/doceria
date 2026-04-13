@@ -1,0 +1,14 @@
+# ─────────────────────────────────────────────────────────────
+# Doceria Silva – _redirects (Netlify)
+# ─────────────────────────────────────────────────────────────
+
+# Garante que o painel admin funciona corretamente
+/admin              /admin/index.html   200
+/admin/             /admin/index.html   200
+
+# Redireciona http → https (Netlify faz isso automaticamente,
+# mas fica aqui para clareza)
+# http://doceriasilva.com.br/*   https://doceriasilva.com.br/:splat   301!
+
+# Redireciona www → sem www (ajuste se preferir com www)
+# https://www.doceriasilva.com.br/*   https://doceriasilva.com.br/:splat   301!

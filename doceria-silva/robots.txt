@@ -1,0 +1,12 @@
+# ──────────────────────────────────────────────────────────────
+# Doceria Silva – robots.txt
+# ──────────────────────────────────────────────────────────────
+
+User-agent: *
+Allow: /
+
+# Bloqueia o painel administrativo dos crawlers
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://doceriasilva.com.br/sitemap.xml

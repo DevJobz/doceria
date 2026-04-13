@@ -1,0 +1,31 @@
+{
+  "eyebrow": "Depoimentos",
+  "titulo_linha1": "O que nossos clientes",
+  "titulo_em": "dizem de nós",
+  "items": [
+    {
+      "texto": "Pedi para o aniversário da minha filha e todos ficaram apaixonados! O ninho com Nutella é surreal!",
+      "autor": "Ana Carla",
+      "inicial": "A",
+      "nota": 5
+    },
+    {
+      "texto": "O brigadeiro tem aquela textura perfeita, derrete na boca. Recomendo demais!",
+      "autor": "Marcos Lima",
+      "inicial": "M",
+      "nota": 5
+    },
+    {
+      "texto": "O churros me surpreendeu! Nunca pensei que o sabor ficaria tão fiel num docinho. Incrível!",
+      "autor": "Júlia Mendes",
+      "inicial": "J",
+      "nota": 5
+    },
+    {
+      "texto": "Encomendei o Oreo e a embalagem veio linda! Parece presente de confeitaria fina. Amei tudo!",
+      "autor": "Renata Costa",
+      "inicial": "R",
+      "nota": 5
+    }
+  ]
+}

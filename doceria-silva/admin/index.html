@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Painel Administrativo – Doceria Silva</title>
+
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!-- ─── CSS DO PREVIEW ────────────────────────────────────── -->
+  <script>CMS.registerPreviewStyle("/admin/preview.css");</script>
+
+  <script>
+  /* ══════════════════════════════════════════════════════════
+     LIVE PREVIEW TEMPLATES
+     Usa createClass e h() globais fornecidos pelo Decap CMS
+  ══════════════════════════════════════════════════════════ */
+
+  var h = window.h;
+  var createClass = window.createClass;
+
+  /* ── HELPERS ────────────────────────────────────────────── */
+  function getStr(entry, field) {
+    return entry.getIn(['data', field]) || '';
+  }
+  function getAssetSrc(getAsset, entry, field) {
+    var val = entry.getIn(['data', field]);
+    if (!val) return '';
+    var asset = getAsset(val);
+    return asset ? asset.toString() : val;
+  }
+  function stars(nota) {
+    return '⭐'.repeat(Math.min(5, Math.max(1, parseInt(nota) || 5)));
+  }
+
+  /* ── PREVIEW: CONFIGURAÇÕES GERAIS ─────────────────────── */
+  var PreviewConfig = createClass({
+    render: function() {
+      var entry    = this.props.entry;
+      var getAsset = this.props.getAsset;
+      var logo     = getAssetSrc(getAsset, entry, 'logo');
+      var nome     = getStr(entry, 'nome_empresa');
+      var slogan   = getStr(entry, 'slogan');
+      var descSeo  = getStr(entry, 'descricao_seo');
+      var wpp      = getStr(entry, 'whatsapp');
+      var igUrl    = getStr(entry, 'instagram_url');
+      var corP     = getStr(entry, 'cor_primaria') || '#9E3B5A';
+      var corD     = getStr(entry, 'cor_destaque') || '#FF4F7B';
+
+      return h('div', { className: 'prev-config' },
+        h('div', { className: 'prev-config__header', style: { background: corP } },
+          logo ? h('img', { src: logo, className: 'prev-logo' }) : null,
+          h('div', null,
+            h('h2', { style: { color: '#fff', margin: 0 } }, nome || 'Nome da Empresa'),
+            h('p',  { style: { color: 'rgba(255,255,255,.8)', margin: 0 } }, slogan)
+          )
+        ),
+        h('div', { className: 'prev-config__body' },
+          h('div', { className: 'prev-info-row' },
+            h('span', { className: 'prev-label' }, '📝 SEO:'),
+            h('span', null, descSeo || '—')
+          ),
+          h('div', { className: 'prev-info-row' },
+            h('span', { className: 'prev-label' }, '📱 WhatsApp:'),
+            h('span', null, wpp || '—')
+          ),
+          h('div', { className: 'prev-info-row' },
+            h('span', { className: 'prev-label' }, '📷 Instagram:'),
+            h('span', null, igUrl || '—')
+          ),
+          h('div', { className: 'prev-colors' },
+            h('span', { className: 'prev-label' }, '🎨 Cores:'),
+            h('div', { className: 'prev-swatch', style: { background: corP } }, corP),
+            h('div', { className: 'prev-swatch', style: { background: corD } }, corD)
+          )
+        )
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('geral', PreviewConfig);
+
+  /* ── PREVIEW: HERO ──────────────────────────────────────── */
+  var PreviewHero = createClass({
+    render: function() {
+      var entry    = this.props.entry;
+      var getAsset = this.props.getAsset;
+      var eyebrow  = getStr(entry, 'eyebrow');
+      var linha1   = getStr(entry, 'titulo_linha1');
+      var em       = getStr(entry, 'titulo_em');
+      var linha3   = getStr(entry, 'titulo_linha3');
+      var desc     = getStr(entry, 'descricao');
+      var btn1     = getStr(entry, 'btn_primario_texto');
+      var btn2     = getStr(entry, 'btn_secundario_texto');
+      var badgeIco = getStr(entry, 'badge_icone');
+      var badgeTxt = getStr(entry, 'badge_texto');
+      var imgSrc   = getAssetSrc(getAsset, entry, 'imagem');
+      var imgAlt   = getStr(entry, 'imagem_alt');
+
+      return h('div', { className: 'prev-hero' },
+        h('div', { className: 'prev-hero__content' },
+          h('span', { className: 'prev-eyebrow' }, eyebrow),
+          h('h1',   { className: 'prev-hero__title' },
+            linha1, h('br', null),
+            h('em', { className: 'prev-hero__em' }, em), h('br', null),
+            linha3
+          ),
+          h('p',   { className: 'prev-hero__desc' }, desc),
+          h('div', { className: 'prev-hero__btns' },
+            h('span', { className: 'prev-btn prev-btn--primary' }, btn1),
+            h('span', { className: 'prev-btn prev-btn--ghost'   }, btn2)
+          ),
+          h('div', { className: 'prev-badge' },
+            h('span', null, badgeIco),
+            h('span', null, badgeTxt)
+          )
+        ),
+        h('div', { className: 'prev-hero__img' },
+          imgSrc
+            ? h('img', { src: imgSrc, alt: imgAlt, className: 'prev-plate' })
+            : h('div', { className: 'prev-placeholder' }, '🍬', h('p', null, 'Imagem principal'))
+        )
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('hero', PreviewHero);
+
+  /* ── PREVIEW: HISTÓRIA ──────────────────────────────────── */
+  var PreviewHistoria = createClass({
+    render: function() {
+      var entry    = this.props.entry;
+      var getAsset = this.props.getAsset;
+      var eyebrow  = getStr(entry, 'eyebrow');
+      var l1       = getStr(entry, 'titulo_linha1');
+      var em       = getStr(entry, 'titulo_em');
+      var l2       = getStr(entry, 'titulo_linha2');
+      var p1       = getStr(entry, 'paragrafo1');
+      var p2       = getStr(entry, 'paragrafo2');
+      var s1n      = getStr(entry, 'stat1_numero');
+      var s1l      = getStr(entry, 'stat1_label');
+      var s2n      = getStr(entry, 'stat2_numero');
+      var s2l      = getStr(entry, 'stat2_label');
+      var s3n      = getStr(entry, 'stat3_numero');
+      var s3l      = getStr(entry, 'stat3_label');
+      var imgSrc   = getAssetSrc(getAsset, entry, 'imagem');
+      var imgAlt   = getStr(entry, 'imagem_alt');
+
+      return h('div', { className: 'prev-historia' },
+        h('div', { className: 'prev-historia__text' },
+          h('span', { className: 'prev-eyebrow' }, eyebrow),
+          h('h2',   { className: 'prev-section-title' },
+            l1, ' ', h('em', { className: 'prev-em' }, em), ',', h('br', null), l2
+          ),
+          h('p',  { className: 'prev-para' }, p1),
+          h('p',  { className: 'prev-para' }, p2),
+          h('div', { className: 'prev-stats' },
+            h('div', { className: 'prev-stat' },
+              h('strong', null, s1n), h('span', null, s1l)
+            ),
+            h('div', { className: 'prev-stat' },
+              h('strong', null, s2n), h('span', null, s2l)
+            ),
+            h('div', { className: 'prev-stat' },
+              h('strong', null, s3n), h('span', null, s3l)
+            )
+          )
+        ),
+        h('div', { className: 'prev-historia__img' },
+          imgSrc
+            ? h('img', { src: imgSrc, alt: imgAlt, className: 'prev-historia-foto' })
+            : h('div', { className: 'prev-placeholder prev-placeholder--tall' }, '📸', h('p', null, imgAlt || 'Foto'))
+        )
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('historia', PreviewHistoria);
+
+  /* ── PREVIEW: CARDÁPIO ──────────────────────────────────── */
+  var PreviewCardapio = createClass({
+    render: function() {
+      var entry    = this.props.entry;
+      var getAsset = this.props.getAsset;
+      var eyebrow  = getStr(entry, 'eyebrow');
+      var l1       = getStr(entry, 'titulo_linha1');
+      var em       = getStr(entry, 'titulo_em');
+      var sub      = getStr(entry, 'subtitulo');
+      var produtos = entry.getIn(['data', 'produtos']);
+
+      var cards = produtos ? produtos.toJS().filter(function(p) { return p.ativo !== false; }).map(function(p, i) {
+        var imgSrc = p.imagem ? (function() { var a = getAsset(p.imagem); return a ? a.toString() : p.imagem; })() : '';
+        var badgeEl = p.badge_texto
+          ? h('span', { className: 'prev-badge-product' + (p.badge_tipo === 'novo' ? ' prev-badge-novo' : '') },
+              p.badge_texto)
+          : null;
+
+        return h('div', { className: 'prev-card', key: i },
+          h('div', { className: 'prev-card__media' },
+            imgSrc
+              ? h('img', { src: imgSrc, alt: p.imagem_alt || p.nome, className: 'prev-card__img' })
+              : h('div', { className: 'prev-card__ph' }, p.icone || '🍬', h('p', null, p.nome)),
+            badgeEl
+          ),
+          h('div', { className: 'prev-card__body' },
+            h('h3', { className: 'prev-card__name' }, p.nome),
+            h('p',  { className: 'prev-card__desc' }, p.descricao),
+            h('div', { className: 'prev-card__footer' },
+              h('div', null,
+                h('span', { className: 'prev-price-label' }, p.preco_label || 'Bandeja 4 un.'),
+                h('span', { className: 'prev-price-value' }, p.preco || 'Consulte')
+              ),
+              h('span', { className: 'prev-btn prev-btn--primary prev-btn--small' }, 'Pedir agora')
+            )
+          )
+        );
+      }) : [];
+
+      return h('div', { className: 'prev-cardapio' },
+        h('div', { className: 'prev-cardapio__header' },
+          h('span', { className: 'prev-eyebrow' }, eyebrow),
+          h('h2', { className: 'prev-section-title' }, l1, h('br', null), h('em', { className: 'prev-em' }, em)),
+          h('p',  { className: 'prev-sub' }, sub)
+        ),
+        h('div', { className: 'prev-cardapio__grid' }, cards)
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('produtos', PreviewCardapio);
+
+  /* ── PREVIEW: SHOWCASE ──────────────────────────────────── */
+  var PreviewShowcase = createClass({
+    render: function() {
+      var entry    = this.props.entry;
+      var getAsset = this.props.getAsset;
+      var slides   = entry.getIn(['data', 'slides']);
+
+      var slideEls = slides ? slides.toJS().map(function(s, i) {
+        var imgSrc = s.imagem ? (function() { var a = getAsset(s.imagem); return a ? a.toString() : s.imagem; })() : '';
+        var num = String(i + 1).padStart(2, '0');
+        return h('div', { className: 'prev-showcase__slide', key: i },
+          h('div', { className: 'prev-showcase__content' },
+            h('span', { className: 'prev-showcase__step' }, num),
+            h('h2',   { className: 'prev-showcase__title' },
+              s.titulo, ' ', h('em', { className: 'prev-showcase__em' }, s.titulo_em)
+            ),
+            h('p', { className: 'prev-showcase__desc' }, s.descricao)
+          ),
+          h('div', { className: 'prev-showcase__media' },
+            imgSrc
+              ? h('img', { src: imgSrc, alt: s.imagem_alt || '', className: 'prev-showcase__img' })
+              : h('div', { className: 'prev-placeholder' },
+                  s.icone_placeholder || '📸', h('p', null, s.imagem_alt || 'Imagem do slide'))
+          )
+        );
+      }) : [];
+
+      return h('div', { className: 'prev-showcase' }, slideEls);
+    }
+  });
+  CMS.registerPreviewTemplate('slides', PreviewShowcase);
+
+  /* ── PREVIEW: DEPOIMENTOS ───────────────────────────────── */
+  var PreviewDepoimentos = createClass({
+    render: function() {
+      var entry  = this.props.entry;
+      var eyebrow = getStr(entry, 'eyebrow');
+      var l1      = getStr(entry, 'titulo_linha1');
+      var em      = getStr(entry, 'titulo_em');
+      var items   = entry.getIn(['data', 'items']);
+
+      var cards = items ? items.toJS().map(function(d, i) {
+        return h('div', { className: 'prev-depo', key: i },
+          h('p',   { className: 'prev-depo__text' }, '"' + d.texto + '"'),
+          h('div', { className: 'prev-depo__author' },
+            h('div', { className: 'prev-depo__avatar' }, d.inicial || '?'),
+            h('div', null,
+              h('strong', null, d.autor),
+              h('span',   null, stars(d.nota))
+            )
+          )
+        );
+      }) : [];
+
+      return h('div', { className: 'prev-depoimentos' },
+        h('span', { className: 'prev-eyebrow', style: { textAlign: 'center', display: 'block' } }, eyebrow),
+        h('h2',   { className: 'prev-section-title', style: { textAlign: 'center' } },
+          l1, h('br', null), h('em', { className: 'prev-em' }, em)
+        ),
+        h('div', { className: 'prev-depo__track' }, cards)
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('lista', PreviewDepoimentos);
+
+  /* ── PREVIEW: PEDIDO ────────────────────────────────────── */
+  var PreviewPedido = createClass({
+    render: function() {
+      var entry   = this.props.entry;
+      var eyebrow = getStr(entry, 'eyebrow');
+      var l1      = getStr(entry, 'titulo_linha1');
+      var em      = getStr(entry, 'titulo_em');
+      var l2      = getStr(entry, 'titulo_linha2');
+      var desc    = getStr(entry, 'descricao');
+      var i1ico   = getStr(entry, 'info1_icone');
+      var i1txt   = getStr(entry, 'info1_texto');
+      var i1neg   = getStr(entry, 'info1_negrito');
+      var i2ico   = getStr(entry, 'info2_icone');
+      var i2txt   = getStr(entry, 'info2_texto');
+      var i2neg   = getStr(entry, 'info2_negrito');
+      var i3ico   = getStr(entry, 'info3_icone');
+      var i3txt   = getStr(entry, 'info3_texto');
+      var i3neg   = getStr(entry, 'info3_negrito');
+      var ctit    = getStr(entry, 'card_titulo');
+      var btnTxt  = getStr(entry, 'btn_texto');
+      var nota    = getStr(entry, 'nota');
+
+      return h('div', { className: 'prev-pedido' },
+        h('div', { className: 'prev-pedido__text' },
+          h('span', { className: 'prev-eyebrow' }, eyebrow),
+          h('h2', { className: 'prev-section-title' },
+            l1, h('br', null), h('em', { className: 'prev-em' }, em), ' ', l2
+          ),
+          h('p', { className: 'prev-para' }, desc),
+          h('ul', { className: 'prev-info-list' },
+            h('li', null, i1ico, ' ', i1txt, ' ', h('strong', null, i1neg)),
+            h('li', null, i2ico, ' ', i2txt, ' ', h('strong', null, i2neg)),
+            h('li', null, i3ico, ' ', i3txt, ' ', h('strong', null, i3neg))
+          )
+        ),
+        h('div', { className: 'prev-pedido__card' },
+          h('h3', null, ctit),
+          h('div', { className: 'prev-pedido__wpp' },
+            h('span', { className: 'prev-btn prev-btn--wpp' }, '📱 ', btnTxt)
+          ),
+          h('p', { className: 'prev-nota' }, nota)
+        )
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('pedido', PreviewPedido);
+
+  /* ── PREVIEW: MARQUEE ───────────────────────────────────── */
+  var PreviewMarquee = createClass({
+    render: function() {
+      var entry = this.props.entry;
+      var items = entry.getIn(['data', 'items']);
+      var texts = items ? items.toJS() : [];
+
+      return h('div', { className: 'prev-marquee-wrapper' },
+        h('div', { className: 'prev-marquee' },
+          h('div', { className: 'prev-marquee__track' },
+            texts.concat(texts).map(function(t, i) {
+              return h('span', { key: i }, t);
+            })
+          )
+        ),
+        h('p', { className: 'prev-marquee__hint' },
+          'Esta faixa será duplicada automaticamente para o efeito infinito.'
+        )
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('marquee', PreviewMarquee);
+
+  /* ── PREVIEW: DOCINHOS ESPECIAIS ────────────────────────── */
+  var PreviewEspeciais = createClass({
+    render: function() {
+      var entry    = this.props.entry;
+      var getAsset = this.props.getAsset;
+      var eyebrow  = getStr(entry, 'eyebrow');
+      var l1       = getStr(entry, 'titulo_linha1');
+      var em       = getStr(entry, 'titulo_em');
+      var sub      = getStr(entry, 'subtitulo');
+      var produtos = entry.getIn(['data', 'produtos']);
+
+      var cards = produtos ? produtos.toJS().filter(function(p) { return p.ativo !== false; }).map(function(p, i) {
+        var imgSrc = p.imagem ? (function() { var a = getAsset(p.imagem); return a ? a.toString() : p.imagem; })() : '';
+        var badgeEl = p.badge_texto
+          ? h('span', { className: 'prev-badge-product' + (p.badge_tipo === 'novo' ? ' prev-badge-novo' : '') }, p.badge_texto)
+          : null;
+        return h('div', { className: 'prev-card', key: i },
+          h('div', { className: 'prev-card__media' },
+            imgSrc
+              ? h('img', { src: imgSrc, alt: p.imagem_alt || p.nome, className: 'prev-card__img' })
+              : h('div', { className: 'prev-card__ph' }, p.icone || '🍬', h('p', null, p.nome)),
+            badgeEl
+          ),
+          h('div', { className: 'prev-card__body' },
+            h('h3', { className: 'prev-card__name' }, p.nome),
+            h('p',  { className: 'prev-card__desc' }, p.descricao),
+            h('div', { className: 'prev-card__footer' },
+              h('div', null,
+                h('span', { className: 'prev-price-label' }, p.preco_label || 'Sob encomenda'),
+                h('span', { className: 'prev-price-value' }, p.preco || 'Consulte')
+              ),
+              h('span', { className: 'prev-btn prev-btn--primary prev-btn--small' }, 'Encomendar')
+            )
+          )
+        );
+      }) : [];
+
+      return h('div', { className: 'prev-cardapio prev-especiais' },
+        h('div', { className: 'prev-cardapio__header' },
+          h('span', { className: 'prev-eyebrow' }, eyebrow),
+          h('h2', { className: 'prev-section-title' }, l1, h('br', null), h('em', { className: 'prev-em' }, em)),
+          h('p', { className: 'prev-sub' }, sub)
+        ),
+        h('div', { className: 'prev-cardapio__grid' }, cards)
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('produtos_especiais', PreviewEspeciais);
+
+  /* ── PREVIEW: PEDIDOS ESPECIAIS ─────────────────────────── */
+  var PreviewPedidosEspeciais = createClass({
+    render: function() {
+      var entry   = this.props.entry;
+      var eyebrow = getStr(entry, 'eyebrow');
+      var l1      = getStr(entry, 'titulo_linha1');
+      var em      = getStr(entry, 'titulo_em');
+      var desc    = getStr(entry, 'descricao');
+      var btnTxt  = getStr(entry, 'btn_texto');
+      var nota    = getStr(entry, 'btn_nota');
+      var items   = entry.getIn(['data', 'items']);
+
+      var cards = items ? items.toJS().filter(function(it) { return it.ativo !== false; }).map(function(item, i) {
+        return h('div', { className: 'prev-especial-card', key: i },
+          h('span', { className: 'prev-especial-icone' }, item.icone || '🍬'),
+          h('h3',   { className: 'prev-especial-titulo' }, item.titulo),
+          h('p',    { className: 'prev-especial-desc' },   item.descricao)
+        );
+      }) : [];
+
+      return h('div', { className: 'prev-pedidos-esp' },
+        h('div', { className: 'prev-pedidos-esp__header' },
+          h('span', { className: 'prev-eyebrow', style: { color: '#F5C518' } }, eyebrow),
+          h('h2', { className: 'prev-section-title', style: { color: '#FFFAF5' } },
+            l1, h('br', null), h('em', { style: { color: '#F5C518', fontStyle: 'italic' } }, em)
+          ),
+          h('p', { className: 'prev-para', style: { color: 'rgba(254,243,232,.6)' } }, desc)
+        ),
+        h('div', { className: 'prev-pedidos-esp__grid' }, cards),
+        h('div', { style: { textAlign: 'center', marginTop: '2rem' } },
+          h('span', { className: 'prev-btn prev-btn--wpp', style: { display: 'inline-flex', maxWidth: '320px' } },
+            '📱 ', btnTxt
+          ),
+          h('p', { style: { fontSize: '.78rem', color: 'rgba(254,243,232,.4)', marginTop: '.75rem' } }, nota)
+        )
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('encomendas', PreviewPedidosEspeciais);
+
+
+  </script>
+</body>
+</html>

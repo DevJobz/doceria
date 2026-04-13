@@ -1,0 +1,28 @@
+{
+  "slides": [
+    {
+      "titulo": "Ingredientes",
+      "titulo_em": "selecionados",
+      "descricao": "Leite Ninho original, Nutella, chocolate belga, biscoito Oreo e doce de leite artesanal. Só o melhor entra na nossa cozinha.",
+      "imagem": "/assets/images/uploads/ingredientes.jpg",
+      "imagem_alt": "Ingredientes selecionados da Doceria Silva",
+      "icone_placeholder": "🛒"
+    },
+    {
+      "titulo": "Feitos com",
+      "titulo_em": "muito amor",
+      "descricao": "Cada docinho é enrolado à mão, com a técnica e o carinho que só quem ama confeitaria sabe colocar.",
+      "imagem": "/assets/images/uploads/processo.jpg",
+      "imagem_alt": "Processo artesanal de produção dos docinhos",
+      "icone_placeholder": "👐"
+    },
+    {
+      "titulo": "Entrega",
+      "titulo_em": "perfeita",
+      "descricao": "Sua bandeja chega em embalagem especial, pronta para presentear ou degustar. Porque os detalhes fazem toda a diferença.",
+      "imagem": "/assets/images/uploads/embalagem.jpg",
+      "imagem_alt": "Embalagem especial da Doceria Silva",
+      "icone_placeholder": "🎁"
+    }
+  ]
+}

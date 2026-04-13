@@ -1,0 +1,60 @@
+{
+  "eyebrow": "Docinhos Especiais",
+  "titulo_linha1": "Sobremesas que vão",
+  "titulo_em": "além do esperado",
+  "subtitulo": "Criações artesanais exclusivas, feitas sob encomenda com o mesmo amor e dedicação.",
+  "produtos": [
+    {
+      "id": "pastelzinho-ninho",
+      "nome": "Pastelzinho de Ninho com Nutella",
+      "descricao": "Massa crocante e dourada recheada com creme de leite Ninho e generosa camada de Nutella. Uma explosão de sabor em cada mordida.",
+      "preco": "Consulte",
+      "preco_label": "Sob encomenda",
+      "icone": "🥐",
+      "badge_texto": "✦ Especial",
+      "badge_tipo": "novo",
+      "imagem": "assets/images/uploads/pastelzinho-ninho.jpg",
+      "imagem_alt": "Pastelzinho de Ninho com Nutella",
+      "ativo": true
+    },
+    {
+      "id": "brownie-ninho",
+      "nome": "Brownie de Ninho com Nutella",
+      "descricao": "Brownie fudgy de leite Ninho com swirl de Nutella, crocante por fora e cremoso por dentro. Irresistível em cada pedaço.",
+      "preco": "Consulte",
+      "preco_label": "Sob encomenda",
+      "icone": "🍫",
+      "badge_texto": "",
+      "badge_tipo": "",
+      "imagem": "assets/images/uploads/brownie-ninho.jpg",
+      "imagem_alt": "Brownie de Ninho com Nutella",
+      "ativo": true
+    },
+    {
+      "id": "coxinha-ninho",
+      "nome": "Coxinha de Ninho com Nutella",
+      "descricao": "Massa de leite Ninho modelada no formato de coxinha, recheada com creme de Nutella. O doce que surpreende todo mundo.",
+      "preco": "Consulte",
+      "preco_label": "Sob encomenda",
+      "icone": "🍗",
+      "badge_texto": "⭐ Hit do momento",
+      "badge_tipo": "destaque",
+      "imagem": "assets/images/uploads/coxinha-ninho.jpg",
+      "imagem_alt": "Coxinha de Ninho com Nutella",
+      "ativo": true
+    },
+    {
+      "id": "doce-colher",
+      "nome": "Docinhos de Colher",
+      "descricao": "Cremosos e elegantes, servidos em copinhos individuais. Disponíveis nos sabores: Leite Ninho, Brigadeiro, Churros e Oreo.",
+      "preco": "Consulte",
+      "preco_label": "Sob encomenda",
+      "icone": "🥄",
+      "badge_texto": "4 sabores",
+      "badge_tipo": "destaque",
+      "imagem": "assets/images/uploads/doce-colher.jpg",
+      "imagem_alt": "Docinhos de colher em copinhos individuais",
+      "ativo": true
+    }
+  ]
+}

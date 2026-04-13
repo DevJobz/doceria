@@ -1,0 +1,362 @@
+# ══════════════════════════════════════════════════════════════
+# Doceria Silva – admin/config.yml
+# Decap CMS 3.x   |   Backend: Netlify Git Gateway
+# ══════════════════════════════════════════════════════════════
+
+# ─── BACKEND ────────────────────────────────────────────────
+backend:
+  name: git-gateway
+  branch: main
+
+# ─── MÍDIA ──────────────────────────────────────────────────
+media_folder:  "assets/images/uploads"   # pasta no repositório
+public_folder: "/assets/images/uploads"  # URL pública das imagens
+
+# ─── LOCALE ─────────────────────────────────────────────────
+locale: "pt"
+
+# ─── COLEÇÕES ───────────────────────────────────────────────
+collections:
+
+  # ══════════════════════════════════════════════════════════
+  # ⚙️ CONFIGURAÇÕES GERAIS DO SITE
+  # ══════════════════════════════════════════════════════════
+  - name: "configuracoes"
+    label: "⚙️ Configurações do Site"
+    files:
+      - name: "geral"
+        label: "Configurações Gerais"
+        file: "dados/configuracoes.json"
+        format: json
+        fields:
+          - { label: "Nome da Empresa",   name: "nome_empresa",   widget: "string",
+              hint: "Ex: Doceria Silva" }
+          - { label: "Slogan",            name: "slogan",          widget: "string",
+              hint: "Frase curta de apoio ao nome da empresa." }
+          - { label: "Descrição SEO",     name: "descricao_seo",   widget: "text",
+              hint: "Texto exibido no Google. Ideal: 150-160 caracteres." }
+          - { label: "Palavras-chave",    name: "palavras_chave",  widget: "string",
+              hint: "Separadas por vírgula. Ex: doceria, brigadeiro, São Paulo" }
+          - label: "WhatsApp"
+            name: "whatsapp"
+            widget: "string"
+            hint: "Apenas números com DDD e código do país. Ex: 5511999999999"
+          - { label: "URL do Instagram",  name: "instagram_url",   widget: "string",
+              required: false, hint: "URL completa. Ex: https://www.instagram.com/usuario/" }
+          - { label: "URL do Facebook",   name: "facebook_url",    widget: "string",
+              required: false, hint: "Deixe em branco para ocultar o ícone." }
+          - { label: "URL do TikTok",     name: "tiktok_url",      widget: "string",
+              required: false, hint: "Deixe em branco para ocultar o ícone." }
+          - { label: "E-mail de contato", name: "email",           widget: "string",
+              required: false }
+          - { label: "URL do Site",       name: "url_site",        widget: "string",
+              hint: "Ex: https://doceriasilva.com.br (sem barra no final)" }
+          - { label: "Logo do Site",      name: "logo",            widget: "image",
+              hint: "PNG com fundo transparente. Recomendado: 200×80 px" }
+          - { label: "Favicon",           name: "favicon",         widget: "image",
+              hint: "PNG quadrado. Recomendado: 512×512 px" }
+          - { label: "Imagem Open Graph", name: "og_imagem",       widget: "image",
+              hint: "Imagem exibida ao compartilhar no WhatsApp/redes. Ideal: 1200×630 px" }
+          - { label: "Texto do Rodapé",   name: "rodape_descricao", widget: "string",
+              hint: "Descrição curta na coluna da esquerda do rodapé." }
+          - { label: "Slogan do Rodapé",  name: "rodape_texto_direito", widget: "string",
+              hint: "Ex: Feito com ❤️ e muito açúcar" }
+          - { label: "Cor Principal (botões, destaques)", name: "cor_primaria",
+              widget: "color", default: "#9E3B5A",
+              hint: "Cor dos botões e elementos de destaque." }
+          - { label: "Cor de Destaque (ações, gradientes)", name: "cor_destaque",
+              widget: "color", default: "#FF4F7B",
+              hint: "Cor usada nos gradientes dos botões e destaques." }
+
+  # ══════════════════════════════════════════════════════════
+  # 📝 CONTEÚDO DAS SEÇÕES
+  # ══════════════════════════════════════════════════════════
+  - name: "conteudo"
+    label: "📝 Conteúdo das Seções"
+    files:
+
+      # ── HERO ──────────────────────────────────────────────
+      - name: "hero"
+        label: "🏠 Seção Inicial (Hero)"
+        file: "dados/hero.json"
+        format: json
+        fields:
+          - { label: "Texto do Eyebrow", name: "eyebrow",         widget: "string",
+              hint: "Pequena frase acima do título. Ex: ✦ Docinhos Artesanais ✦" }
+          - { label: "Título – Linha 1",  name: "titulo_linha1",   widget: "string",
+              hint: "Ex: Cada mordida," }
+          - { label: "Título – Palavra em Itálico", name: "titulo_em", widget: "string",
+              hint: "Palavra que ficará em itálico e com gradiente de cor. Ex: um momento" }
+          - { label: "Título – Linha 3",  name: "titulo_linha3",   widget: "string",
+              hint: "Ex: de pura felicidade." }
+          - { label: "Descrição",         name: "descricao",       widget: "text",
+              hint: "Parágrafo abaixo do título. Máx. 200 caracteres." }
+          - { label: "Botão Primário – Texto", name: "btn_primario_texto", widget: "string",
+              default: "Ver Cardápio" }
+          - { label: "Botão Primário – Link",  name: "btn_primario_href",  widget: "string",
+              default: "#cardapio", hint: "Use #ancora para links internos." }
+          - { label: "Botão Secundário – Texto", name: "btn_secundario_texto", widget: "string",
+              default: "Fazer Pedido" }
+          - { label: "Botão Secundário – Link",  name: "btn_secundario_href",  widget: "string",
+              default: "#pedido" }
+          - { label: "Ícone do Badge",    name: "badge_icone",     widget: "string",
+              hint: "Emoji. Ex: 🍫" }
+          - { label: "Texto do Badge",    name: "badge_texto",     widget: "string",
+              hint: "Ex: Bandeja c/ 4 un." }
+          - { label: "Imagem Principal",  name: "imagem",          widget: "image",
+              hint: "Foto da bandeja de docinhos. Recomendado: 600×600 px, PNG com fundo transparente." }
+          - { label: "Alt da Imagem",     name: "imagem_alt",      widget: "string",
+              hint: "Descrição da imagem para acessibilidade e SEO." }
+
+      # ── NOSSA HISTÓRIA ────────────────────────────────────
+      - name: "historia"
+        label: "📖 Nossa História"
+        file: "dados/historia.json"
+        format: json
+        fields:
+          - { label: "Eyebrow",            name: "eyebrow",       widget: "string",
+              default: "Nossa História" }
+          - { label: "Título – Linha 1",   name: "titulo_linha1", widget: "string",
+              hint: "Ex: Feito com" }
+          - { label: "Título – Palavra em Itálico", name: "titulo_em", widget: "string",
+              hint: "Ex: amor" }
+          - { label: "Título – Linha 2",   name: "titulo_linha2", widget: "string",
+              hint: "Ex: entregue com carinho." }
+          - { label: "Parágrafo 1",        name: "paragrafo1",    widget: "text" }
+          - { label: "Parágrafo 2",        name: "paragrafo2",    widget: "text" }
+          - { label: "Estatística 1 – Número", name: "stat1_numero", widget: "string",
+              hint: "Ex: 500+" }
+          - { label: "Estatística 1 – Legenda", name: "stat1_label", widget: "string",
+              hint: "Ex: Clientes felizes" }
+          - { label: "Estatística 2 – Número", name: "stat2_numero", widget: "string" }
+          - { label: "Estatística 2 – Legenda", name: "stat2_label", widget: "string" }
+          - { label: "Estatística 3 – Número", name: "stat3_numero", widget: "string" }
+          - { label: "Estatística 3 – Legenda", name: "stat3_label", widget: "string" }
+          - { label: "Foto (Emily e Vitória)", name: "imagem",    widget: "image",
+              hint: "Proporção ideal 4:5 (retrato). Ex: 400×500 px" }
+          - { label: "Alt da Foto",         name: "imagem_alt",   widget: "string" }
+
+      # ── SEÇÃO FAZER PEDIDO ────────────────────────────────
+      - name: "pedido"
+        label: "🛒 Seção Fazer Pedido"
+        file: "dados/pedido.json"
+        format: json
+        fields:
+          - { label: "Eyebrow",          name: "eyebrow",       widget: "string", default: "Fazer Pedido" }
+          - { label: "Título – Linha 1", name: "titulo_linha1", widget: "string", hint: "Ex: Pronta para" }
+          - { label: "Título – Em Itálico", name: "titulo_em", widget: "string", hint: "Ex: adoçar" }
+          - { label: "Título – Linha 2", name: "titulo_linha2", widget: "string", hint: "Ex: o seu dia?" }
+          - { label: "Descrição",        name: "descricao",     widget: "text" }
+          - { label: "Info 1 – Ícone",   name: "info1_icone",   widget: "string", hint: "Emoji. Ex: 📦" }
+          - { label: "Info 1 – Texto",   name: "info1_texto",   widget: "string", hint: "Ex: Bandeja com" }
+          - { label: "Info 1 – Negrito", name: "info1_negrito", widget: "string", hint: "Ex: 4 unidades" }
+          - { label: "Info 2 – Ícone",   name: "info2_icone",   widget: "string" }
+          - { label: "Info 2 – Texto",   name: "info2_texto",   widget: "string" }
+          - { label: "Info 2 – Negrito", name: "info2_negrito", widget: "string" }
+          - { label: "Info 3 – Ícone",   name: "info3_icone",   widget: "string" }
+          - { label: "Info 3 – Texto",   name: "info3_texto",   widget: "string" }
+          - { label: "Info 3 – Negrito", name: "info3_negrito", widget: "string" }
+          - { label: "Título do Card",   name: "card_titulo",   widget: "string", default: "Selecione seu sabor" }
+          - { label: "Texto do Botão WhatsApp", name: "btn_texto", widget: "string", default: "Pedir pelo WhatsApp" }
+          - { label: "Nota abaixo do botão",    name: "nota",    widget: "string" }
+
+      # ── FAIXA DESLIZANTE (MARQUEE) ────────────────────────
+      - name: "marquee"
+        label: "📢 Faixa Deslizante"
+        file: "dados/marquee.json"
+        format: json
+        fields:
+          - label: "Itens da Faixa"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.item}}"
+            field:
+              label: "Texto"
+              name: "item"
+              widget: "string"
+              hint: "Use ✦ para separador visual. Ex: Brigadeiro ✦"
+
+  # ══════════════════════════════════════════════════════════
+  # 🍬 CARDÁPIO (PRODUTOS)
+  # Adicione, remova ou reordene os docinhos aqui
+  # ══════════════════════════════════════════════════════════
+  - name: "cardapio"
+    label: "🍬 Cardápio"
+    files:
+      - name: "produtos"
+        label: "Produtos do Cardápio"
+        file: "dados/cardapio.json"
+        format: json
+        fields:
+          - { label: "Eyebrow da Seção", name: "eyebrow",      widget: "string", default: "Cardápio" }
+          - { label: "Título – Linha 1", name: "titulo_linha1", widget: "string" }
+          - { label: "Título – Em Itálico", name: "titulo_em", widget: "string" }
+          - { label: "Subtítulo",        name: "subtitulo",    widget: "string" }
+          - label: "Produtos"
+            name: "produtos"
+            widget: "list"
+            summary: "{{fields.nome}} – {{fields.preco}}"
+            fields:
+              - { label: "ID (sem espaços, sem acento)", name: "id",        widget: "string",
+                  hint: "Identificador único. Ex: ninho, oreo, brigadeiro. Não use espaços." }
+              - { label: "Nome do Produto",              name: "nome",      widget: "string" }
+              - { label: "Descrição",                    name: "descricao", widget: "text" }
+              - { label: "Preço",                        name: "preco",     widget: "string",
+                  hint: "Ex: R$ 25,00  ou  Consulte" }
+              - { label: "Label do Preço",               name: "preco_label", widget: "string",
+                  default: "Bandeja 4 un." }
+              - { label: "Ícone / Emoji",                name: "icone",     widget: "string",
+                  hint: "Emoji que aparece quando a imagem não carrega. Ex: 🍫" }
+              - label: "Badge de Destaque"
+                name: "badge_tipo"
+                widget: "select"
+                default: ""
+                options:
+                  - { label: "Nenhum",          value: "" }
+                  - { label: "⭐ Mais Pedido",   value: "destaque" }
+                  - { label: "✦ Novidade",       value: "novo" }
+              - { label: "Texto do Badge",  name: "badge_texto",  widget: "string",
+                  required: false, hint: "Ex: ⭐ Mais Pedido   ou   ✦ Novidade" }
+              - { label: "Foto do Produto", name: "imagem",       widget: "image",
+                  hint: "Proporção 1:1 (quadrada). Recomendado: 600×600 px" }
+              - { label: "Alt da Foto",     name: "imagem_alt",   widget: "string" }
+              - { label: "Produto ativo?",  name: "ativo",        widget: "boolean",
+                  default: true, hint: "Desative para ocultar sem excluir." }
+
+  # ══════════════════════════════════════════════════════════
+  # 🎬 SEÇÃO IMERSIVA (SHOWCASE)
+  # Adicione ou remova slides com foto + texto
+  # ══════════════════════════════════════════════════════════
+  - name: "showcase"
+    label: "🎬 Seção Imersiva"
+    files:
+      - name: "slides"
+        label: "Slides da Seção Imersiva"
+        file: "dados/showcase.json"
+        format: json
+        fields:
+          - label: "Slides"
+            name: "slides"
+            widget: "list"
+            summary: "{{fields.titulo}} {{fields.titulo_em}}"
+            fields:
+              - { label: "Título",               name: "titulo",           widget: "string" }
+              - { label: "Título – Em Itálico",  name: "titulo_em",        widget: "string",
+                  hint: "Trecho do título que ficará dourado e em itálico." }
+              - { label: "Descrição",            name: "descricao",        widget: "text" }
+              - { label: "Imagem",               name: "imagem",           widget: "image",
+                  hint: "Proporção 4:3. Recomendado: 800×600 px" }
+              - { label: "Alt da Imagem",        name: "imagem_alt",       widget: "string" }
+              - { label: "Ícone Placeholder",    name: "icone_placeholder", widget: "string",
+                  hint: "Emoji exibido quando a imagem não carrega. Ex: 🛒" }
+
+  # ══════════════════════════════════════════════════════════
+  # 💬 DEPOIMENTOS
+  # Adicione ou remova avaliações de clientes
+  # ══════════════════════════════════════════════════════════
+  - name: "depoimentos"
+    label: "💬 Depoimentos de Clientes"
+    files:
+      - name: "lista"
+        label: "Lista de Depoimentos"
+        file: "dados/depoimentos.json"
+        format: json
+        fields:
+          - { label: "Eyebrow",          name: "eyebrow",      widget: "string", default: "Depoimentos" }
+          - { label: "Título – Linha 1", name: "titulo_linha1", widget: "string" }
+          - { label: "Título – Em Itálico", name: "titulo_em", widget: "string" }
+          - label: "Depoimentos"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.autor}} – {{fields.nota}} estrelas"
+            fields:
+              - { label: "Depoimento",         name: "texto",   widget: "text",
+                  hint: "Sem aspas — elas serão adicionadas automaticamente." }
+              - { label: "Nome do Cliente",    name: "autor",   widget: "string" }
+              - { label: "Inicial do Avatar",  name: "inicial", widget: "string",
+                  hint: "Uma letra maiúscula. Ex: A, M, J, R" }
+              - label: "Nota (estrelas)"
+                name: "nota"
+                widget: "select"
+                default: 5
+                options:
+                  - { label: "⭐⭐⭐⭐⭐ (5 estrelas)", value: 5 }
+                  - { label: "⭐⭐⭐⭐   (4 estrelas)", value: 4 }
+                  - { label: "⭐⭐⭐     (3 estrelas)", value: 3 }
+
+  # ══════════════════════════════════════════════════════════
+  # ✨ DOCINHOS ESPECIAIS
+  # Adicione, remova ou reordene os docinhos especiais aqui
+  # ══════════════════════════════════════════════════════════
+  - name: "especiais"
+    label: "✨ Docinhos Especiais"
+    files:
+      - name: "produtos_especiais"
+        label: "Produtos Especiais"
+        file: "dados/especiais.json"
+        format: json
+        fields:
+          - { label: "Eyebrow da Seção", name: "eyebrow",       widget: "string", default: "Docinhos Especiais" }
+          - { label: "Título – Linha 1", name: "titulo_linha1", widget: "string" }
+          - { label: "Título – Em Itálico", name: "titulo_em", widget: "string" }
+          - { label: "Subtítulo",        name: "subtitulo",    widget: "string" }
+          - label: "Produtos Especiais"
+            name: "produtos"
+            widget: "list"
+            summary: "{{fields.nome}} – {{fields.preco}}"
+            fields:
+              - { label: "ID (sem espaços, sem acento)", name: "id",           widget: "string",
+                  hint: "Ex: pastelzinho-ninho, brownie, coxinha. Sem espaços." }
+              - { label: "Nome do Produto",              name: "nome",         widget: "string" }
+              - { label: "Descrição",                    name: "descricao",    widget: "text" }
+              - { label: "Preço / Valor",                name: "preco",        widget: "string",
+                  hint: "Ex: R$ 15,00  ou  Consulte" }
+              - { label: "Label do Preço",               name: "preco_label",  widget: "string",
+                  default: "Sob encomenda" }
+              - { label: "Ícone / Emoji",                name: "icone",        widget: "string",
+                  hint: "Ex: 🥐  🍫  🍗  🥄" }
+              - label: "Badge de Destaque"
+                name: "badge_tipo"
+                widget: "select"
+                default: ""
+                options:
+                  - { label: "Nenhum",          value: "" }
+                  - { label: "⭐ Destaque",      value: "destaque" }
+                  - { label: "✦ Especial/Novo",  value: "novo" }
+              - { label: "Texto do Badge",  name: "badge_texto",  widget: "string",
+                  required: false, hint: "Ex: ✦ Especial   ou   ⭐ Hit do momento" }
+              - { label: "Foto do Produto", name: "imagem",       widget: "image",
+                  hint: "Proporção 1:1 (quadrada). Recomendado: 600×600 px" }
+              - { label: "Alt da Foto",     name: "imagem_alt",   widget: "string" }
+              - { label: "Produto ativo?",  name: "ativo",        widget: "boolean",
+                  default: true, hint: "Desative para ocultar sem excluir." }
+
+  # ══════════════════════════════════════════════════════════
+  # 🎁 PEDIDOS ESPECIAIS / ENCOMENDAS
+  # Tipos de encomenda disponíveis + botão de contato
+  # ══════════════════════════════════════════════════════════
+  - name: "pedidos_especiais"
+    label: "🎁 Pedidos Especiais / Encomendas"
+    files:
+      - name: "encomendas"
+        label: "Seção de Encomendas"
+        file: "dados/pedidos-especiais.json"
+        format: json
+        fields:
+          - { label: "Eyebrow",          name: "eyebrow",       widget: "string", default: "Pedidos Especiais" }
+          - { label: "Título – Linha 1", name: "titulo_linha1", widget: "string" }
+          - { label: "Título – Em Itálico", name: "titulo_em", widget: "string" }
+          - { label: "Descrição Intro",  name: "descricao",     widget: "text" }
+          - label: "Tipos de Encomenda"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.icone}} {{fields.titulo}}"
+            fields:
+              - { label: "Ícone / Emoji", name: "icone",    widget: "string",
+                  hint: "Ex: 🍬  🥐  🍫  🍗  🥄" }
+              - { label: "Título",        name: "titulo",   widget: "string" }
+              - { label: "Descrição",     name: "descricao", widget: "text" }
+              - { label: "Ativo?",        name: "ativo",    widget: "boolean", default: true }
+          - { label: "Texto do Botão WhatsApp", name: "btn_texto", widget: "string",
+              default: "Fazer Encomenda pelo WhatsApp" }
+          - { label: "Nota abaixo do botão",    name: "btn_nota",  widget: "string" }

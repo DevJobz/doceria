@@ -1,0 +1,63 @@
+# ══════════════════════════════════════════════════════════════
+# Doceria Silva – netlify.toml
+# Configurações de build, headers e redirects para Netlify
+# ══════════════════════════════════════════════════════════════
+
+[build]
+  publish = "."
+  # Sem build command (site estático puro)
+
+# ── CONTEXTO DE PRODUÇÃO ────────────────────────────────────
+[context.production.environment]
+  NODE_ENV = "production"
+
+# ── HEADERS GLOBAIS ─────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options           = "SAMEORIGIN"
+    X-XSS-Protection          = "1; mode=block"
+    X-Content-Type-Options    = "nosniff"
+    Referrer-Policy           = "strict-origin-when-cross-origin"
+    Permissions-Policy        = "camera=(), microphone=(), geolocation=()"
+
+# ── CACHE: HTML (curto, para refletir mudanças do CMS) ──────
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+# ── CACHE: DADOS JSON DO CMS ────────────────────────────────
+[[headers]]
+  for = "/dados/*"
+  [headers.values]
+    Cache-Control             = "public, max-age=300, must-revalidate"
+    Access-Control-Allow-Origin = "*"
+
+# ── CACHE: ASSETS ESTÁTICOS (CSS / JS) ──────────────────────
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# ── CACHE: IMAGENS (longo) ──────────────────────────────────
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+# ── CACHE: FONTS / SITEMAP / ROBOTS ─────────────────────────
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

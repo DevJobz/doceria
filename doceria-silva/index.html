@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doceria Silva | Docinhos Artesanais – Emily e Vitória</title>
+  <meta name="description" content="Doceria Silva – Emily e Vitória. Docinhos artesanais de ninho, oreo, churros e brigadeiro. Bandeja com 4 unidades. Peça pelo WhatsApp!" />
+  <meta name="keywords" content="doceria, docinhos artesanais, brigadeiro, ninho nutella, oreo, churros, doceria silva, emily e vitoria, São Paulo" />
+  <meta name="author" content="Doceria Silva" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://doceriasilva.com.br/" />
+  <meta name="theme-color" content="#FEF3E8" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Doceria Silva" />
+  <meta property="og:title" content="Doceria Silva | Docinhos Artesanais – Emily e Vitória" />
+  <meta property="og:description" content="Docinhos artesanais de ninho, oreo, churros e brigadeiro. Feitos com amor por Emily e Vitória. Bandeja com 4 unidades. Peça pelo WhatsApp!" />
+  <meta property="og:image" content="https://doceriasilva.com.br/assets/images/uploads/og-imagem.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://doceriasilva.com.br/" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Doceria Silva | Docinhos Artesanais" />
+  <meta name="twitter:description" content="Docinhos artesanais de ninho, oreo, churros e brigadeiro. Feitos com amor por Emily e Vitória." />
+  <meta name="twitter:image" content="https://doceriasilva.com.br/assets/images/uploads/og-imagem.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Doceria Silva",
+    "description": "Doceria artesanal especializada em docinhos finos de ninho com nutella, oreo, churros e brigadeiro.",
+    "url": "https://doceriasilva.com.br",
+    "telephone": "+55-14-99183-2982",
+    "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
+    "servesCuisine": "Confeitaria Artesanal",
+    "sameAs": ["https://www.instagram.com/_.doceriasilva._/"]
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="assets/images/uploads/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/images/uploads/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader__ring"></div>
+    <div class="loader__heart">♥</div>
+    <p class="loader__text">Preparando os docinhos…</p>
+  </div>
+
+  <!-- ─── NAV ───────────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <img id="siteLogoNav" src="assets/images/uploads/logo.png" alt="Doceria Silva" class="nav__logo-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <span class="nav__logo-text" style="display:none;">Doceria<br/><em>Silva</em></span>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#inicio"            class="nav__link">Início</a></li>
+      <li><a href="#historia"          class="nav__link">Nossa História</a></li>
+      <li><a href="#cardapio"          class="nav__link">Cardápio</a></li>
+      <li><a href="#especiais"         class="nav__link">Especiais</a></li>
+      <li><a href="#pedido"            class="nav__link">Fazer Pedido</a></li>
+      <li><a href="#pedidos-especiais" class="nav__link">Encomendas</a></li>
+      <li><a href="#contato"           class="nav__link">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── HERO ──────────────────────────────────────────────── -->
+  <section class="hero" id="inicio">
+    <div class="hero__particles" id="particles"></div>
+    <div class="hero__content">
+      <span class="hero__eyebrow reveal-up" id="heroEyebrow">✦ Docinhos Artesanais ✦</span>
+      <h1 class="hero__title reveal-up" style="animation-delay:.15s" id="heroTitulo">
+        Cada mordida,<br/>
+        <em id="heroTituloEm">um momento</em>
+        de pura felicidade.
+      </h1>
+      <p class="hero__desc reveal-up" style="animation-delay:.3s" id="heroDesc">
+        Criados com amor por Emily e Vitória, nossos docinhos são a
+        experiência que você merece — artesanais, únicos e irresistíveis.
+      </p>
+      <div class="hero__actions reveal-up" style="animation-delay:.45s">
+        <a href="#cardapio" class="btn btn--primary" id="heroBtnPrimario">Ver Cardápio</a>
+        <a href="#pedido"   class="btn btn--ghost"   id="heroBtnSecundario">Fazer Pedido</a>
+        <div class="hero__badge">
+          <div class="hero__badge-inner">
+            <span class="badge__icon" id="heroBadgeIcone">🍫</span>
+            <span class="badge__label" id="heroBadgeTexto">Bandeja c/ 4 un.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual reveal-right" style="animation-delay:.2s">
+      <div class="hero__plate">
+        <img id="heroImagem" src="assets/images/uploads/hero-plate.png" alt="Bandeja de docinhos artesanais" class="hero__plate-img"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hero__plate-placeholder" style="display:none;"><span>🍬</span><p>Sua imagem<br/>aqui</p></div>
+        <div class="hero__plate-glow"></div>
+      </div>
+      <div class="float-item float-item--1" aria-hidden="true">🍫</div>
+      <div class="float-item float-item--2" aria-hidden="true">🍪</div>
+      <div class="float-item float-item--3" aria-hidden="true">❤️</div>
+      <div class="float-item float-item--4" aria-hidden="true">✨</div>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true"><span></span><p>Role para descobrir</p></div>
+  </section>
+
+  <!-- ─── MARQUEE ───────────────────────────────────────────── -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>Ninho com Nutella ✦</span><span>Brigadeiro ✦</span><span>Oreo ✦</span><span>Churros ✦</span>
+      <span>Pastelzinho ✦</span><span>Brownie ✦</span><span>Coxinha Doce ✦</span><span>Doce de Colher ✦</span>
+      <span>Ninho com Nutella ✦</span><span>Brigadeiro ✦</span><span>Oreo ✦</span><span>Churros ✦</span>
+    </div>
+  </div>
+
+  <!-- ─── HISTÓRIA ──────────────────────────────────────────── -->
+  <section class="historia" id="historia">
+    <div class="historia__container">
+      <div class="historia__text">
+        <span class="section-eyebrow reveal-up" id="historiaEyebrow">Nossa História</span>
+        <h2 class="section-title reveal-up" style="animation-delay:.1s" id="historiaTitulo">
+          Feito com <em id="historiaTituloEm">amor</em>,<br/>entregue com carinho.
+        </h2>
+        <p class="historia__para reveal-up" style="animation-delay:.2s" id="historiaPara1">
+          A Doceria Silva nasceu do sonho de duas irmãs — Emily e Vitória —
+          que transformaram a cozinha da família num ateliê de sabores.
+          Cada receita carrega memória afetiva e o cuidado de quem ama o que faz.
+        </p>
+        <p class="historia__para reveal-up" style="animation-delay:.3s" id="historiaPara2">
+          Nossos docinhos são preparados de forma artesanal, sem corantes artificiais,
+          com ingredientes selecionados e muito afeto em cada etapa do processo.
+        </p>
+        <div class="historia__stats reveal-up" style="animation-delay:.4s">
+          <div class="stat"><strong id="historiaStat1Num">500+</strong><span id="historiaStat1Label">Clientes felizes</span></div>
+          <div class="stat"><strong id="historiaStat2Num">4</strong><span id="historiaStat2Label">Sabores exclusivos</span></div>
+          <div class="stat"><strong id="historiaStat3Num">100%</strong><span id="historiaStat3Label">Artesanal</span></div>
+        </div>
+      </div>
+      <div class="historia__image reveal-left" style="animation-delay:.2s">
+        <img id="historiaImagem" src="assets/images/uploads/historia.jpg" alt="Emily e Vitória na cozinha" class="historia__img"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="historia__img-placeholder" style="display:none;"><span>📸</span><p>Sua foto aqui<br/>(Emily &amp; Vitória)</p></div>
+        <div class="historia__img-deco"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CARDÁPIO ──────────────────────────────────────────── -->
+  <section class="cardapio" id="cardapio">
+    <div class="cardapio__header">
+      <span class="section-eyebrow reveal-up" id="cardapioEyebrow">Cardápio</span>
+      <h2 class="section-title reveal-up" style="animation-delay:.1s" id="cardapioTitulo">
+        Escolha o seu<br/><em>sabor favorito</em>
+      </h2>
+      <p class="cardapio__subtitle reveal-up" style="animation-delay:.2s" id="cardapioSubtitulo">
+        Todos os docinhos são vendidos em bandeja com <strong>4 unidades</strong>.
+      </p>
+    </div>
+    <div class="cardapio__grid" id="cardapioGrid">
+      <article class="product-card reveal-up" style="animation-delay:.1s" data-flavor="ninho">
+        <div class="product-card__media">
+          <img src="assets/images/uploads/ninho-nutella.jpg" alt="Docinho de Ninho com Nutella" class="product-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="product-card__img-ph" style="display:none;"><span>🥛</span><p>Ninho c/<br/>Nutella</p></div>
+          <div class="product-card__shine"></div>
+          <span class="product-card__badge">⭐ Mais Pedido</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Ninho com Nutella</h3>
+          <p class="product-card__desc">Recheio cremoso de leite Ninho com generosa camada de Nutella, coberto em chocolate branco. Vicia na primeira mordida.</p>
+          <div class="product-card__footer">
+            <div class="product-card__price"><span class="price__label">Bandeja 4 un.</span><span class="price__value">Consulte</span></div>
+            <a href="#pedido" class="btn btn--small btn--primary">Pedir agora</a>
+          </div>
+        </div>
+      </article>
+      <article class="product-card reveal-up" style="animation-delay:.2s" data-flavor="oreo">
+        <div class="product-card__media">
+          <img src="assets/images/uploads/oreo.jpg" alt="Docinho de Oreo" class="product-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="product-card__img-ph" style="display:none;"><span>🍪</span><p>Oreo</p></div>
+          <div class="product-card__shine"></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Oreo</h3>
+          <p class="product-card__desc">Brigadeiro branco com biscoito Oreo triturado, enrolado em mais Oreo esfarelado. Textura irresistível, sabor inesquecível.</p>
+          <div class="product-card__footer">
+            <div class="product-card__price"><span class="price__label">Bandeja 4 un.</span><span class="price__value">Consulte</span></div>
+            <a href="#pedido" class="btn btn--small btn--primary">Pedir agora</a>
+          </div>
+        </div>
+      </article>
+      <article class="product-card reveal-up" style="animation-delay:.3s" data-flavor="churros">
+        <div class="product-card__media">
+          <img src="assets/images/uploads/churros.jpg" alt="Docinho de Churros" class="product-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="product-card__img-ph" style="display:none;"><span>🍡</span><p>Churros</p></div>
+          <div class="product-card__shine"></div>
+          <span class="product-card__badge product-card__badge--new">✦ Novidade</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Churros</h3>
+          <p class="product-card__desc">Recheio de doce de leite com toque de canela, coberto com açúcar e canela. O sabor da festa junina no seu docinho.</p>
+          <div class="product-card__footer">
+            <div class="product-card__price"><span class="price__label">Bandeja 4 un.</span><span class="price__value">Consulte</span></div>
+            <a href="#pedido" class="btn btn--small btn--primary">Pedir agora</a>
+          </div>
+        </div>
+      </article>
+      <article class="product-card reveal-up" style="animation-delay:.4s" data-flavor="brigadeiro">
+        <div class="product-card__media">
+          <img src="assets/images/uploads/brigadeiro.jpg" alt="Brigadeiro" class="product-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="product-card__img-ph" style="display:none;"><span>🍫</span><p>Brigadeiro</p></div>
+          <div class="product-card__shine"></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Brigadeiro</h3>
+          <p class="product-card__desc">O clássico que nunca sai de moda. Massa fudgy de chocolate, granulado belga e aquele brilho perfeito que faz a boca salivar.</p>
+          <div class="product-card__footer">
+            <div class="product-card__price"><span class="price__label">Bandeja 4 un.</span><span class="price__value">Consulte</span></div>
+            <a href="#pedido" class="btn btn--small btn--primary">Pedir agora</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── DOCINHOS ESPECIAIS ────────────────────────────────── -->
+  <section class="especiais" id="especiais">
+    <div class="especiais__header">
+      <span class="section-eyebrow reveal-up" id="especiaisEyebrow">Docinhos Especiais</span>
+      <h2 class="section-title reveal-up" style="animation-delay:.1s" id="especiaisTitulo">
+        Sobremesas que vão<br/><em>além do esperado</em>
+      </h2>
+      <p class="especiais__subtitle reveal-up" style="animation-delay:.2s" id="especiaisSubtitulo">
+        Criações artesanais exclusivas, feitas sob encomenda com o mesmo amor e dedicação.
+      </p>
+    </div>
+    <!-- JS renderiza a partir de dados/especiais.json -->
+    <div class="especiais__grid" id="especiaisGrid">
+      <article class="product-card reveal-up" style="animation-delay:.1s">
+        <div class="product-card__media">
+          <img src="assets/images/uploads/pastelzinho-ninho.jpg" alt="Pastelzinho de Ninho com Nutella" class="product-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="product-card__img-ph" style="display:none;"><span>🥐</span><p>Pastelzinho<br/>de Ninho</p></div>
+          <div class="product-card__shine"></div>
+          <span class="product-card__badge product-card__badge--new">✦ Especial</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Pastelzinho de Ninho com Nutella</h3>
+          <p class="product-card__desc">Massa crocante recheada com creme de leite Ninho e Nutella. Uma explosão de sabor em cada mordida.</p>
+          <div class="product-card__footer">
+            <div class="product-card__price"><span class="price__label">Sob encomenda</span><span class="price__value">Consulte</span></div>
+            <a href="#pedidos-especiais" class="btn btn--small btn--primary">Encomendar</a>
+          </div>
+        </div>
+      </article>
+      <article class="product-card reveal-up" style="animation-delay:.2s">
+        <div class="product-card__media">
+          <img src="assets/images/uploads/brownie-ninho.jpg" alt="Brownie de Ninho com Nutella" class="product-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="product-card__img-ph" style="display:none;"><span>🍫</span><p>Brownie<br/>de Ninho</p></div>
+          <div class="product-card__shine"></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Brownie de Ninho com Nutella</h3>
+          <p class="product-card__desc">Brownie fudgy de leite Ninho com swirl de Nutella. Crocante por fora e cremoso por dentro.</p>
+          <div class="product-card__footer">
+            <div class="product-card__price"><span class="price__label">Sob encomenda</span><span class="price__value">Consulte</span></div>
+            <a href="#pedidos-especiais" class="btn btn--small btn--primary">Encomendar</a>
+          </div>
+        </div>
+      </article>
+      <article class="product-card reveal-up" style="animation-delay:.3s">
+        <div class="product-card__media">
+          <img src="assets/images/uploads/coxinha-ninho.jpg" alt="Coxinha de Ninho com Nutella" class="product-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="product-card__img-ph" style="display:none;"><span>🍗</span><p>Coxinha<br/>de Ninho</p></div>
+          <div class="product-card__shine"></div>
+          <span class="product-card__badge">⭐ Hit do momento</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Coxinha de Ninho com Nutella</h3>
+          <p class="product-card__desc">Massa de leite Ninho no formato de coxinha, recheada com creme de Nutella. O doce que surpreende.</p>
+          <div class="product-card__footer">
+            <div class="product-card__price"><span class="price__label">Sob encomenda</span><span class="price__value">Consulte</span></div>
+            <a href="#pedidos-especiais" class="btn btn--small btn--primary">Encomendar</a>
+          </div>
+        </div>
+      </article>
+      <article class="product-card reveal-up" style="animation-delay:.4s">
+        <div class="product-card__media">
+          <img src="assets/images/uploads/doce-colher.jpg" alt="Docinhos de colher" class="product-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="product-card__img-ph" style="display:none;"><span>🥄</span><p>Docinhos<br/>de Colher</p></div>
+          <div class="product-card__shine"></div>
+          <span class="product-card__badge">4 sabores</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Docinhos de Colher</h3>
+          <p class="product-card__desc">Cremosos em copinhos individuais. Sabores: Leite Ninho, Brigadeiro, Churros e Oreo.</p>
+          <div class="product-card__footer">
+            <div class="product-card__price"><span class="price__label">Sob encomenda</span><span class="price__value">Consulte</span></div>
+            <a href="#pedidos-especiais" class="btn btn--small btn--primary">Encomendar</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIÊNCIA IMERSIVA ──────────────────────────────── -->
+  <section class="showcase">
+    <div class="showcase__sticky-wrap">
+      <div class="showcase__track" id="showcaseTrack">
+        <div class="showcase__slide showcase__slide--1">
+          <div class="showcase__slide-content">
+            <span class="showcase__step">01</span>
+            <h2 class="showcase__title">Ingredientes <em>selecionados</em></h2>
+            <p>Leite Ninho original, Nutella, chocolate belga, biscoito Oreo e doce de leite artesanal. Só o melhor entra na nossa cozinha.</p>
+          </div>
+          <div class="showcase__media">
+            <img src="assets/images/uploads/ingredientes.jpg" alt="Ingredientes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-ph"><span>🛒</span><p>Foto dos<br/>ingredientes</p></div>
+          </div>
+        </div>
+        <div class="showcase__slide showcase__slide--2">
+          <div class="showcase__slide-content">
+            <span class="showcase__step">02</span>
+            <h2 class="showcase__title">Feitos com <em>muito amor</em></h2>
+            <p>Cada docinho é enrolado à mão, com a técnica e o carinho que só quem ama confeitaria sabe colocar.</p>
+          </div>
+          <div class="showcase__media">
+            <img src="assets/images/uploads/processo.jpg" alt="Processo de produção" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-ph"><span>👐</span><p>Foto do<br/>processo</p></div>
+          </div>
+        </div>
+        <div class="showcase__slide showcase__slide--3">
+          <div class="showcase__slide-content">
+            <span class="showcase__step">03</span>
+            <h2 class="showcase__title">Entrega <em>perfeita</em></h2>
+            <p>Sua bandeja chega em embalagem especial, pronta para presentear ou degustar. Porque os detalhes fazem toda a diferença.</p>
+          </div>
+          <div class="showcase__media">
+            <img src="assets/images/uploads/embalagem.jpg" alt="Embalagem" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-ph"><span>🎁</span><p>Foto da<br/>embalagem</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DEPOIMENTOS ───────────────────────────────────────── -->
+  <section class="depoimentos">
+    <span class="section-eyebrow reveal-up" id="depoEyebrow" style="text-align:center;display:block;">Depoimentos</span>
+    <h2 class="section-title reveal-up" id="depoTitulo" style="text-align:center;animation-delay:.1s">
+      O que nossos clientes<br/><em>dizem de nós</em>
+    </h2>
+    <div class="depoimentos__track-wrap">
+      <div class="depoimentos__track" id="depoimentosTrack">
+        <div class="depo-card">
+          <p class="depo-card__text">"Pedi para o aniversário da minha filha e todos ficaram apaixonados! O ninho com Nutella é surreal!"</p>
+          <div class="depo-card__author"><div class="depo-card__avatar">A</div><div><strong>Ana Carla</strong><span>⭐⭐⭐⭐⭐</span></div></div>
+        </div>
+        <div class="depo-card">
+          <p class="depo-card__text">"O brigadeiro tem aquela textura perfeita, derrete na boca. Recomendo demais!"</p>
+          <div class="depo-card__author"><div class="depo-card__avatar">M</div><div><strong>Marcos Lima</strong><span>⭐⭐⭐⭐⭐</span></div></div>
+        </div>
+        <div class="depo-card">
+          <p class="depo-card__text">"O churros me surpreendeu! Nunca pensei que o sabor ficaria tão fiel num docinho. Incrível!"</p>
+          <div class="depo-card__author"><div class="depo-card__avatar">J</div><div><strong>Júlia Mendes</strong><span>⭐⭐⭐⭐⭐</span></div></div>
+        </div>
+        <div class="depo-card">
+          <p class="depo-card__text">"Encomendei o Oreo e a embalagem veio linda! Parece presente de confeitaria fina. Amei tudo!"</p>
+          <div class="depo-card__author"><div class="depo-card__avatar">R</div><div><strong>Renata Costa</strong><span>⭐⭐⭐⭐⭐</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAZER PEDIDO ──────────────────────────────────────── -->
+  <section class="pedido" id="pedido">
+    <div class="pedido__container">
+      <div class="pedido__text">
+        <span class="section-eyebrow reveal-up" id="pedidoEyebrow">Fazer Pedido</span>
+        <h2 class="section-title reveal-up" style="animation-delay:.1s" id="pedidoTitulo">
+          Pronta para<br/><em id="pedidoTituloEm">adoçar</em> o seu dia?
+        </h2>
+        <p class="reveal-up" style="animation-delay:.2s" id="pedidoDesc">
+          Entre em contato pelo WhatsApp e faça seu pedido. Respondemos rapidinho e combinamos tudo com você!
+        </p>
+        <ul class="pedido__info reveal-up" style="animation-delay:.3s" id="pedidoInfoList">
+          <li>📦 Bandeja com <strong>4 unidades</strong></li>
+          <li>🕐 Pedidos com <strong>antecedência</strong></li>
+          <li>🚚 Consulte <strong>frete / retirada</strong></li>
+        </ul>
+      </div>
+      <div class="pedido__form-wrap reveal-left" style="animation-delay:.2s">
+        <div class="pedido__form-card">
+          <h3 id="pedidoCardTitulo">Selecione seu sabor</h3>
+          <div class="flavor-selector" id="flavorSelector">
+            <label class="flavor-opt" data-flavor="ninho">
+              <input type="checkbox" name="flavor" value="ninho" />
+              <span class="flavor-opt__box"><span class="flavor-opt__icon">🥛</span><span>Ninho &amp; Nutella</span></span>
+            </label>
+            <label class="flavor-opt" data-flavor="oreo">
+              <input type="checkbox" name="flavor" value="oreo" />
+              <span class="flavor-opt__box"><span class="flavor-opt__icon">🍪</span><span>Oreo</span></span>
+            </label>
+            <label class="flavor-opt" data-flavor="churros">
+              <input type="checkbox" name="flavor" value="churros" />
+              <span class="flavor-opt__box"><span class="flavor-opt__icon">🍡</span><span>Churros</span></span>
+            </label>
+            <label class="flavor-opt" data-flavor="brigadeiro">
+              <input type="checkbox" name="flavor" value="brigadeiro" />
+              <span class="flavor-opt__box"><span class="flavor-opt__icon">🍫</span><span>Brigadeiro</span></span>
+            </label>
+          </div>
+          <a href="#" class="btn btn--primary btn--full btn--whatsapp" id="whatsappBtn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span id="pedidoBtnTexto">Pedir pelo WhatsApp</span>
+          </a>
+          <p class="pedido__note" id="pedidoNota">Ao clicar, você será redirecionado para o WhatsApp com sua seleção.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PEDIDOS ESPECIAIS ─────────────────────────────────── -->
+  <section class="pedidos-especiais" id="pedidos-especiais">
+    <div class="pedidos-especiais__header">
+      <span class="section-eyebrow reveal-up" id="peEyebrow">Pedidos Especiais</span>
+      <h2 class="section-title reveal-up" style="animation-delay:.1s" id="peTitulo">
+        Encomendas para<br/><em>momentos especiais</em>
+      </h2>
+      <p class="pedidos-especiais__desc reveal-up" style="animation-delay:.2s" id="peDesc">
+        Planejando um evento, festa ou presente diferenciado? Fazemos encomendas
+        personalizadas com todo o carinho para cada ocasião.
+      </p>
+    </div>
+    <!-- JS renderiza a partir de dados/pedidos-especiais.json -->
+    <div class="pedidos-especiais__grid" id="pedidosEspeciaisGrid">
+      <div class="especial-card reveal-up" style="animation-delay:.1s">
+        <span class="especial-card__icone">🍬</span>
+        <h3 class="especial-card__titulo">Centos de Docinhos</h3>
+        <p class="especial-card__desc">Perfeito para festas, casamentos e eventos. Docinhos artesanais em quantidade, com qualidade garantida em cada unidade.</p>
+      </div>
+      <div class="especial-card reveal-up" style="animation-delay:.2s">
+        <span class="especial-card__icone">🥐</span>
+        <h3 class="especial-card__titulo">Encomenda de Pastelzinhos</h3>
+        <p class="especial-card__desc">Pastelzinhos de Ninho com Nutella para eventos e festas. Crocantes, recheados e irresistíveis na dose certa.</p>
+      </div>
+      <div class="especial-card reveal-up" style="animation-delay:.3s">
+        <span class="especial-card__icone">🍫</span>
+        <h3 class="especial-card__titulo">Encomenda de Brownies</h3>
+        <p class="especial-card__desc">Brownies artesanais de Ninho com Nutella. Fudgy, saborosos e perfeitos para presentear ou animar qualquer ocasião.</p>
+      </div>
+      <div class="especial-card reveal-up" style="animation-delay:.4s">
+        <span class="especial-card__icone">🍗</span>
+        <h3 class="especial-card__titulo">Encomenda de Coxinhas</h3>
+        <p class="especial-card__desc">Coxinhas doces de Ninho com Nutella, a novidade que faz sucesso em qualquer evento e surpreende todos os convidados.</p>
+      </div>
+      <div class="especial-card reveal-up" style="animation-delay:.5s">
+        <span class="especial-card__icone">🥄</span>
+        <h3 class="especial-card__titulo">Encomenda de Doces de Colher</h3>
+        <p class="especial-card__desc">Docinhos em copinhos individuais nos sabores Ninho, Brigadeiro, Churros e Oreo. Elegância e praticidade para seus convidados.</p>
+      </div>
+    </div>
+    <div class="pedidos-especiais__cta reveal-up" style="animation-delay:.6s">
+      <a id="btnPedidoEspecial"
+         href="https://wa.me/5514991832982?text=Ol%C3%A1%21+Gostaria+de+fazer+uma+encomenda+especial+na+Doceria+Silva+%F0%9F%8D%AC"
+         class="pedidos-especiais__cta-btn" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span id="peBtnTexto">Fazer Encomenda pelo WhatsApp</span>
+      </a>
+      <p class="pedidos-especiais__nota" id="peNota">Entre em contato e nos conte sobre o seu evento. Faremos uma proposta personalizada especialmente para você!</p>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer" id="contato">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img id="siteLogoFooter" src="assets/images/uploads/logo.png" alt="Doceria Silva" class="footer__logo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <span class="footer__logo-text" style="display:none;">Doceria <em>Silva</em></span>
+        <p id="footerDesc">Docinhos artesanais feitos com amor por Emily e Vitória.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#historia">Nossa História</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#especiais">Especiais</a></li>
+          <li><a href="#pedido">Fazer Pedido</a></li>
+          <li><a href="#pedidos-especiais">Encomendas</a></li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <h4>Siga nas redes</h4>
+        <div class="social-links">
+          <a id="linkInstagram" href="https://www.instagram.com/_.doceriasilva._/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <!-- FIX BUG: href com número real em vez de "#" para não recarregar a página -->
+          <a id="linkWhatsappFooter" href="https://wa.me/5514991832982" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a id="linkFacebook" href="#" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a id="linkTiktok" href="#" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.09a8.16 8.16 0 004.77 1.52V7.17a4.85 4.85 0 01-1-.48z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> <span id="footerNomeEmpresa">Doceria Silva – Emily e Vitória</span>. Todos os direitos reservados.</p>
+      <p class="footer__love" id="footerTextoDir">Feito com ❤️ e muito açúcar</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Voltar ao topo">↑</button>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) { window.netlifyIdentity.on("login", function() { document.location.href = "/admin/"; }); }
+      });
+    }
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
