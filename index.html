@@ -79,6 +79,7 @@
   </nav>
 
   <!-- ─── HERO ──────────────────────────────────────────────── -->
+  <div id="hero-scroll-wrapper">
   <section class="hero" id="inicio">
     <div class="hero__particles" id="particles"></div>
     <div class="hero__content">
@@ -103,20 +104,21 @@
         </div>
       </div>
     </div>
-    <div class="hero__visual reveal-right" style="animation-delay:.2s">
-      <div class="hero__plate">
-        <img id="heroImagem" src="assets/images/uploads/hero-plate.png" alt="Bandeja de docinhos artesanais" class="hero__plate-img"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="hero__plate-placeholder" style="display:none;"><span>🍬</span><p>Sua imagem<br/>aqui</p></div>
-        <div class="hero__plate-glow"></div>
-      </div>
-      <div class="float-item float-item--1" aria-hidden="true">🍫</div>
-      <div class="float-item float-item--2" aria-hidden="true">🍪</div>
-      <div class="float-item float-item--3" aria-hidden="true">❤️</div>
-      <div class="float-item float-item--4" aria-hidden="true">✨</div>
+    <div class="hero__video-wrap">
+      <video
+        id="heroVideo"
+        class="hero__video"
+        src="assets/images/uploads/video.mp4"
+        muted
+        playsinline
+        preload="metadata"
+        aria-hidden="true">
+      </video>
+      <div class="hero__video-mask" aria-hidden="true"></div>
     </div>
     <div class="hero__scroll-hint" aria-hidden="true"><span></span><p>Role para descobrir</p></div>
   </section>
+  </div><!-- /hero-scroll-wrapper -->
 
   <!-- ─── MARQUEE ───────────────────────────────────────────── -->
   <div class="marquee-strip" aria-hidden="true">

@@ -164,18 +164,10 @@ function renderHero(h, config) {
     if (h.btn_secundario_href)  btnS.href        = h.btn_secundario_href;
   }
 
-  // Imagem hero
-  if (h.imagem) {
-    const img = document.getElementById('heroImagem');
-    if (img) {
-      img.src = h.imagem;
-      if (h.imagem_alt) img.alt = h.imagem_alt;
-      img.style.display = 'block';
-      const ph = img.nextElementSibling;
-      if (ph && ph.classList.contains('hero__plate-placeholder')) {
-        ph.style.display = 'none';
-      }
-    }
+  // Vídeo hero — src pode ser sobrescrito via CMS (campo "video" no hero.json)
+  if (h.video) {
+    const vid = document.getElementById('heroVideo');
+    if (vid) vid.src = h.video;
   }
 }
 
@@ -932,6 +924,61 @@ const initDepoimentosScroll = () => {
 };
 
 /* ══════════════════════════════════════════════════════════════
+   HERO SCROLL-SCRUBBING VIDEO
+   Vídeo avança/retrocede conforme o scroll.
+   A página fica "presa" até o vídeo terminar.
+══════════════════════════════════════════════════════════════ */
+const initHeroScrollVideo = () => {
+  const wrapper  = document.getElementById('hero-scroll-wrapper');
+  const video    = document.getElementById('heroVideo');
+  if (!wrapper || !video) return;
+
+  video.pause();
+  video.currentTime = 0;
+  video.removeAttribute('autoplay');
+  video.loop = false;
+
+  const PX_PER_SECOND = 480;
+
+  const applyHeight = () => {
+    if (!video.duration || isNaN(video.duration)) return;
+    wrapper.style.height =
+      (video.duration * PX_PER_SECOND + window.innerHeight) + 'px';
+  };
+
+  video.addEventListener('loadedmetadata', applyHeight);
+  setTimeout(applyHeight, 1500);
+  window.addEventListener('resize', applyHeight, { passive: true });
+
+  /*
+    Scrub único para desktop e mobile:
+    usa a posição do wrapper no scroll, sem IntersectionObserver.
+    No mobile o vídeo só é visível enquanto a hero está sticky,
+    então o cálculo de fraction funciona igual ao desktop.
+  */
+  const scrub = () => {
+    const wrapTop   = wrapper.getBoundingClientRect().top + window.scrollY;
+    const scrolled  = window.scrollY - wrapTop;
+    const maxScroll = wrapper.offsetHeight - window.innerHeight;
+    if (maxScroll <= 0) return;
+    const fraction = Math.max(0, Math.min(1, scrolled / maxScroll));
+    if (video.duration && !isNaN(video.duration)) {
+      video.currentTime = fraction * video.duration;
+    }
+  };
+
+  let rafPending = false;
+  window.addEventListener('scroll', () => {
+    if (rafPending) return;
+    rafPending = true;
+    raf(() => {
+      scrub();
+      rafPending = false;
+    });
+  }, { passive: true });
+};
+
+/* ══════════════════════════════════════════════════════════════
    BOOTSTRAP
 ══════════════════════════════════════════════════════════════ */
 async function init() {
@@ -943,7 +990,8 @@ async function init() {
   initDragScroll();
   initBackTop();
   initSmoothLinks();
-  initHeroParallax();
+  initHeroScrollVideo();   // ← novo scroll-scrubbing
+  // initHeroParallax();   // desativado: conflita com o sticky scroll
   initMarquee();
   initDepoimentosScroll();
 
